@@ -8,19 +8,35 @@ import org.junit.Test;
 public class removeEvenLengthTest {
 
 	@Test
-	public void test() {
-		ArrayList<String> list = new ArrayList<String>();
-		list.add("Apple");
-		list.add("Blackberry");
-		list.add("Cherry");
-		list.add("Melon");
-		list.add("+");
-		list.add("Durian");
-		list.add("Elderberry");
-		list.add("Fig");
-		list.add("Grape");
-		list.add("Honeydew");
-		assertEquals(list.size(), 10);
+	public void testRemoveEvenLengthTest() {
+		ArrayList<String> listBefore = new ArrayList<String>();
+		listBefore.add("Apple");
+		listBefore.add("Blackberry");
+		listBefore.add("Cherry");
+		listBefore.add("Melon");
+		listBefore.add("+");
+		listBefore.add("Durian");
+		listBefore.add("Elderberry");
+		listBefore.add("Fig");
+		listBefore.add("Grape");
+		listBefore.add("Honeydew");
+		assertEquals(listBefore.size(), 10);
+
+		ArrayList<String> listAfter = new ArrayList<String>();
+		listAfter.add("Apple");
+		listAfter.add("Melon");
+		listAfter.add("+");
+		listAfter.add("Fig");
+		listAfter.add("Grape");
+		for (int i = 0; i < listAfter.size(); i++) {
+			int letterCount = listAfter.get(i).length();
+			int oddNumber = letterCount % 2;
+			assertEquals(oddNumber, 1);
+		}
+
+//		assertEquals(listAfter,removeEvenLength(listBefore));
+		
+		
 	}
 
 }
