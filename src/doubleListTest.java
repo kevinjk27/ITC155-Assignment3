@@ -1,37 +1,40 @@
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
+import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
 
 import org.junit.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import java.util.ArrayList;
 
 public class doubleListTest {
 
 	@Test
 	public void testDoubleList() {
-		ArrayList<String> senteceBefore = new ArrayList<String>();
-		senteceBefore.add("I");
-		senteceBefore.add("Want");
-		senteceBefore.add("Burger");
+		ArrayList<String> sentenceBefore = new ArrayList<String>();
+		
+		sentenceBefore.add("I");
+		sentenceBefore.add("Want");
+		sentenceBefore.add("Burger");
 
-		assertEquals(senteceBefore.size(), 3);
+		assertEquals(sentenceBefore.size(), 3);
 
-		ArrayList<String> senteceAfter = new ArrayList<String>();
-		senteceAfter.add("I");
-		senteceAfter.add("I");
-		senteceAfter.add("Want");
-		senteceAfter.add("Want");
-		senteceAfter.add("Burger");
-		senteceAfter.add("Burger");
+		ArrayList<String> sentenceAfter = new ArrayList<String>();
+		sentenceAfter.add("I");
+		sentenceAfter.add("I");
+		sentenceAfter.add("Want");
+		sentenceAfter.add("Want");
+		sentenceAfter.add("Burger");
+		sentenceAfter.add("Burger");
 
-		assertEquals(senteceAfter.size(), 6);
+		assertEquals(sentenceAfter.size(), 6);
 
-		for (int i = 0; i < senteceAfter.size(); i += 2) {
-			assertSame(senteceAfter.get(i), senteceAfter.get(i + 1));
+		for (int i = 0; i < sentenceAfter.size(); i += 2) {
+			assertSame(sentenceAfter.get(i), sentenceAfter.get(i + 1));
 		}
-//		assertEquals(senteceAfter, doubleList(senteceBefore));
+		
+		doubleList dr = new doubleList();
+		assertEquals(sentenceAfter, doubleList.doubleList(sentenceBefore));
 
+		
 		ArrayList<String> clauseBefore = new ArrayList<String>();
 		clauseBefore.add("The");
 		clauseBefore.add("Quick");
@@ -70,9 +73,11 @@ public class doubleListTest {
 		for (int i = 0; i < clauseAfter.size(); i += 2) {
 			assertSame(clauseAfter.get(i), clauseAfter.get(i + 1));
 		}
+		
+		assertEquals(clauseAfter, doubleList.doubleList(clauseBefore));
 
-//		assertEquals(clauseAfter, doubleList(clauseAfter));
 
 	}
+
 
 }

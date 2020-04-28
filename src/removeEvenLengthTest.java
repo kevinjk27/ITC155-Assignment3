@@ -9,6 +9,7 @@ public class removeEvenLengthTest {
 
 	@Test
 	public void testRemoveEvenLengthTest() {
+		
 		ArrayList<String> listBefore = new ArrayList<String>();
 		listBefore.add("Apple");
 		listBefore.add("Blackberry");
@@ -34,7 +35,8 @@ public class removeEvenLengthTest {
 			assertEquals(oddNumber, 1);
 		}
 
-//		assertEquals(listAfter,removeEvenLength(listBefore));
+		removeEvenLength dr = new removeEvenLength();
+		assertEquals(listAfter,dr.removeEvenLength(listBefore));
 		
 		
 	}

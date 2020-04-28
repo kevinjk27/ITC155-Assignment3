@@ -23,7 +23,7 @@ public class removeEvenLength  {
 		removeEvenLength(list);
 	}
 
-	public static void removeEvenLength(ArrayList<String> list) {
+	public static ArrayList<String>removeEvenLength(ArrayList<String> list) {
 		for (int i = 0; i < list.size(); i++) {
 			int letterCount = list.get(i).length();
 			if (letterCount % 2 == 0) {
@@ -35,5 +35,6 @@ public class removeEvenLength  {
 			}
 		}
 		System.out.println(list);
+		return list;
 	}
 }
